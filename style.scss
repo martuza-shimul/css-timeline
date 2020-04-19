@@ -40,17 +40,19 @@
 		}
 		&:hover {
 			.content {
-				background-color: rgb(230, 230, 230);
+				background-color: rgb(245, 245, 245);
+				transition: all 0.6s ease-in-out;
 			}
 			&::after {
 				background: rgb(255, 255, 255);
 				box-shadow: 1px 0px 6px 3px rgb(230, 230, 230),
 					-1px 0px 6px 3px rgb(230, 230, 230);
+				transition: all 0.4s ease-in-out;
 			}
 		}
 
 		.content {
-			background-color: rgb(245, 245, 245);
+			background-color: rgb(230, 230, 230);
 			border-radius: 10px;
 		}
 	}
@@ -81,6 +83,35 @@
 			bottom: 0px;
 			left: 0;
 			margin-left: -14px;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.timeline {
+		&::after {
+			left: 2%;
+		}
+		.container {
+			width: 100%;
+		}
+		.left {
+			left: 0;
+
+			.content {
+				padding: 2% 5% 2% 10%;
+				clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 5% 100%, 5% 15%);
+			}
+			&::after {
+				left: 0;
+			}
+		}
+		.right {
+			left: 0%;
+			&::after {
+				left: 0;
+				margin-left: 0px;
+			}
 		}
 	}
 }

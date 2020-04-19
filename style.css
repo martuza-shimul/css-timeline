@@ -47,17 +47,21 @@
 }
 
 .timeline .container:hover .content {
-  background-color: #e6e6e6;
+  background-color: whitesmoke;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
 .timeline .container:hover::after {
   background: white;
   -webkit-box-shadow: 1px 0px 6px 3px #e6e6e6, -1px 0px 6px 3px #e6e6e6;
           box-shadow: 1px 0px 6px 3px #e6e6e6, -1px 0px 6px 3px #e6e6e6;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .timeline .container .content {
-  background-color: whitesmoke;
+  background-color: #e6e6e6;
   border-radius: 10px;
 }
 
@@ -93,5 +97,32 @@
   bottom: 0px;
   left: 0;
   margin-left: -14px;
+}
+
+@media screen and (max-width: 767px) {
+  .timeline::after {
+    left: 2%;
+  }
+  .timeline .container {
+    width: 100%;
+  }
+  .timeline .left {
+    left: 0;
+  }
+  .timeline .left .content {
+    padding: 2% 5% 2% 10%;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 5% 100%, 5% 15%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 5% 100%, 5% 15%);
+  }
+  .timeline .left::after {
+    left: 0;
+  }
+  .timeline .right {
+    left: 0%;
+  }
+  .timeline .right::after {
+    left: 0;
+    margin-left: 0px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
